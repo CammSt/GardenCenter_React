@@ -13,34 +13,30 @@ export default function NavBar() {
             <ul className='mainMenu'>
                 <li> 
                     <a href='index.html'>
-                        {/* <i className='fa-solid fa-house'></i> */}
                         INICIO
                     </a>
                 </li>
                 <li> 
-                    <a href='Location.html'>
-                        {/* <i className='fa-solid fa-map-location-dot'></i> */}
-                        DONDE ENCONTRARNOS
-                    </a>
-                </li>
-                <li> 
-                    <a href='Shop.html'>
-                        {/* <i className='fa-solid fa-seedling'></i> */}
-                        TIENDA
-                    </a>
-                </li>
-                <li> 
-                    <a href='AboutUs.html'>
-                        {/* <i className='fa-solid fa-user-group'></i> */}
+                    <a href='#'>
                         QUIENES SOMOS
                     </a>
                 </li>
                 <li> 
-                    <a href='ContactInfo.html'>
-                        {/* <i className='fa-solid fa-envelope-open-text'></i> */}
+                    <a href='#'>
+                        TIENDA
+                    </a>
+                </li>
+                <li> 
+                    <a href='#'>
                         CONTACTANOS
                     </a>
                 </li>
+                <li> 
+                    <a href='#'>
+                        CARRITO
+                    </a>
+                </li>
+                
             </ul>
         </nav>
     </div>
