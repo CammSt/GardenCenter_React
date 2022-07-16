@@ -1,5 +1,8 @@
 import React from 'react'
-import '../styles/styles.css'
+import './NavBarStyle.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSeedling, faHouse, faUser, faPhone } from '@fortawesome/free-solid-svg-icons'
+import CartWidget from './CartWidget'
 
 export default function NavBar() {
   return (
@@ -11,33 +14,34 @@ export default function NavBar() {
         
         <nav>
             <ul className='mainMenu'>
-                <li> 
-                    <a href='index.html'>
+                <li className='navBarItem'> 
+                    <a href='index.html' className='navBarItem_Title'>
+                        <FontAwesomeIcon icon={faHouse} className='navBarItem_Icon'/>
                         INICIO
                     </a>
                 </li>
-                <li> 
-                    <a href='#'>
+                <li className='navBarItem' > 
+                    <a href='index.html' className='navBarItem_Title'>
+                        <FontAwesomeIcon icon={faUser} className='navBarItem_Icon'/>
                         QUIENES SOMOS
                     </a>
                 </li>
-                <li> 
-                    <a href='#'>
+                <li className='navBarItem'> 
+                    <a href='index.html' className='navBarItem_Title'>
+                        <FontAwesomeIcon icon={faSeedling} className='navBarItem_Icon'/>
                         TIENDA
                     </a>
                 </li>
-                <li> 
-                    <a href='#'>
+                <li className='navBarItem_LastItem'> 
+                    <a href='index.html' className='navBarItem_Title'>
+                        <FontAwesomeIcon icon={faPhone} className='navBarItem_Icon'/>
                         CONTACTANOS
                     </a>
                 </li>
-                <li> 
-                    <a href='#'>
-                        CARRITO
-                    </a>
+                <li className='goToCartButton'>
+                    <CartWidget className='goToCartButton_Icon'/>
                 </li>
-                
-            </ul>
+            </ul>    
         </nav>
     </div>
   )

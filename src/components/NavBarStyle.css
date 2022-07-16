@@ -34,7 +34,7 @@
     text-align: center;
     border-right: 0.5px solid #8A8A8A;
     width: 19%;
-    padding-top: 1vw;
+    padding-top: 0.5vw;
 }
 .navBarItem:hover,
 .navBarItem_LastItem:hover {
@@ -57,7 +57,7 @@
 .navBarItem_LastItem {
     text-align: center;
     width: 19%;
-    padding-top: 1vw;
+    padding-top: 0.5vw;
 }
 
 .goToCartButton {
@@ -70,9 +70,8 @@
     padding: 1vw;
     border-radius: 50%;
     color: white;
-    font-size: 2vw;
-    margin-top: 0.5vw;
-
+    font-size: 1vw;
+    margin-top: 0.3vw;
 }
 
 
