@@ -1,0 +1,64 @@
+.countContainer {
+    display: flex;
+    border: solid black 1px;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    justify-content: center;
+    align-items: center;
+    width: 8vw;
+    height: 2vw;
+    border-radius: 0.5vw;
+    justify-content: space-around;
+}
+.subtractButton {
+    font-size: 3vw;
+    cursor: pointer;
+    color: #328468;
+    margin-bottom: 5%;
+}
+.addButton {
+    font-size: 2.5vw;
+    cursor: pointer;
+    color: #328468;;
+}
+.amountText {
+    font-size: 2vw;
+}
+
+.addToCartButton {
+    font-size: 1vw;
+    text-align: center;
+    color: white;
+    
+    width: 8vw;
+    height: 1.5vw;
+    border-radius: 0.5vw;
+    border: solid 1px #328468;
+    background-color: #328468;
+
+    padding-top: 5%;
+} 
+.addToCartButton:hover {
+    font-size: 1vw;
+    text-align: center;
+    color: white;
+    
+    width: 8vw;
+    height: 1.5vw;
+    border-radius: 0.5vw;
+    border: solid 1px #43A080;
+    background-color: #43A080;
+} 
+.addToCartButton:active {
+    font-size: 1vw;
+    text-align: center;
+    color: #328468;;
+    
+    width: 8vw;
+    height: 1.5vw;
+    border-radius: 0.5vw;
+
+    background-color: white;
+    border: solid 1px #43A080;
+} 
+

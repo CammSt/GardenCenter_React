@@ -1,10 +1,12 @@
 import React from 'react'
-import './NavBarStyle.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSeedling, faHouse, faUser, faPhone } from '@fortawesome/free-solid-svg-icons'
+import { faSeedling, faHouse, faUserGroup, faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons'
+
+import '../styles/NavBarStyle.css'
 import CartWidget from './CartWidget'
 
 export default function NavBar() {
+    
   return (
 
     <div>
@@ -22,7 +24,7 @@ export default function NavBar() {
                 </li>
                 <li className='navBarItem' > 
                     <a href='index.html' className='navBarItem_Title'>
-                        <FontAwesomeIcon icon={faUser} className='navBarItem_Icon'/>
+                        <FontAwesomeIcon icon={faUserGroup} className='navBarItem_Icon'/>
                         QUIENES SOMOS
                     </a>
                 </li>
@@ -32,9 +34,9 @@ export default function NavBar() {
                         TIENDA
                     </a>
                 </li>
-                <li className='navBarItem_LastItem'> 
+                <li className='navBarItem'> 
                     <a href='index.html' className='navBarItem_Title'>
-                        <FontAwesomeIcon icon={faPhone} className='navBarItem_Icon'/>
+                        <FontAwesomeIcon icon={faEnvelopeOpenText} className='navBarItem_Icon'/>
                         CONTACTANOS
                     </a>
                 </li>

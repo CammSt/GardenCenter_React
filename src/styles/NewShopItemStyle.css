@@ -1,0 +1,45 @@
+
+.newReleasesContainer_Item {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.newReleasesContainer_Item_Image {
+  transition: all 0.5s;
+  width: 30%;
+}
+.newReleasesContainer_Item_Image img {
+  width: 90%;
+}
+
+.newReleasesContainer_NewText {
+  font-size: 1.3vw;
+  position: absolute;
+  top: 2%;
+  left: 1%;
+  text-align: center;
+  border-radius: 0.2vw;
+  width: 10vw;
+  background-color: #11b899;
+  color: white;
+}
+
+.newReleasesContainer_Name {
+  font-size: 1.1vw;
+}
+
+.newReleasesContainer_Price {
+  font-size: 1.1vw;
+  color: #328468;
+}
+
+.newReleasesContainer_Stock {
+  font-size: 1.1vw;
+  color: #328468;
+  margin-top: 10%;
+}
+
+.newReleasesContainer_Item_Image:hover {
+  transform: scale(1.2);
+}

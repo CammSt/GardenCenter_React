@@ -1,0 +1,11 @@
+.titleContainer {
+	margin-left: 5%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+  
+.titleContainer__Text {
+	font-size: 2vw;
+	color: #328468;
+	font-style: italic;
+}
