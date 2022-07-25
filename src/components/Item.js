@@ -1,10 +1,10 @@
 import React from 'react'
 import Swal from 'sweetalert2'
 
-import '../styles/NewShopItemStyle.css'
+import '../styles/ItemStyle.css'
 import ItemCount from './ItemCount'
 
-export default function NewShopItem({item,cartList}) {
+export default function Item({item,cartList}) {
 
     const addToCart = (stock,amount) => {
 
@@ -38,12 +38,26 @@ export default function NewShopItem({item,cartList}) {
 
             if(amount === 0) {
                 cartList.splice(indexOf,1)
+                
+                Swal.fire({
+                    title: 'Se borró del carrito',
+                    icon: 'success',
+                    showConfirmButton: false,
+                    toast: true,
+                    position: 'bottom-end',
+                    timer: 3000,
+                    timerProgressBar: true,
+                    background: '#F7A25A',
+                    color: 'white',
+                    iconColor: 'white'
+                })
                 return
             }
 
             cartList[indexOf].amount = amount
             cartList[indexOf].stock = stock
         }
+        
         Swal.fire({
             title: 'Agregado a carrito',
             icon: 'success',

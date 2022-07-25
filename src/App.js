@@ -14,9 +14,9 @@ function App() {
 
 	return (
 		<div>
-			<NavBar/>
-			<Header screenTitle={screenTitle}/>
-			<ItemListContainer list={newItems} cartList={cartList}/>
+			<NavBar />
+			<Header screenTitle={screenTitle} />
+			<ItemListContainer cartList={cartList} />
 		</div>
 	);
 }

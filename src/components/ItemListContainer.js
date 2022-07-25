@@ -1,38 +1,29 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+
 import '../styles/ItemListContainerStyle.css'
+import ItemList from './ItemList'
+import { newItems } from '../variables/newItems'
 
-import NewShopItem from './NewShopItem'
+export default function ItemListContainer({cartList}) {
 
-export default function ItemListContainer({list,previousScreen,cartList}) {
+    const [ newProducts, setNewProducts] = useState([])
 
-    /* const shopItems = () => {
-        return (
-            <div></div>
-        )
-    }
+    const getProducts = new Promise( (resolve, reject) => {
+        setTimeout( () => {
+            resolve(newItems)
+        }, 2000)
+    })
 
-    if(previousScreen === 'Home') {
-        return (
-            <div className="newReleasesContainer">
-                { list.map( (item,index) => {
-                    return (
-                        <NewShopItem key={index} item={item} cartList={cartList}/>
-                    )
-                })}
-            </div>
-        )
-    } else {
-        shopItems()
-    } */
-
+    useEffect(() => {
+        getProducts
+            .then( response => setNewProducts(response) )
+            .catch( e => console.log("Hubo un error", e) )
+    }, [])
 
     return (
         <div className="newReleasesContainer">
-            { list.map( (item,index) => {
-                return (
-                    <NewShopItem key={index} item={item} cartList={cartList}/>
-                )
-            })}
+            <ItemList cartList={cartList} productsList={newProducts}/>
         </div>
     )
+
 }
