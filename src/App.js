@@ -2,9 +2,6 @@ import './App.css';
 import NavBar from './components/NavBar';
 import Header from './components/Header';
 import ItemListContainer from './components/ItemListContainer';
-import Home from './screens/Home';
-
-import { newItems } from './variables/newItems'
 
 function App() {
 
