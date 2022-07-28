@@ -1,0 +1,30 @@
+
+.itemDetailContainer {
+    margin-top: 5vw;
+    display: flex;
+    align-items: center;
+}
+
+.itemDetailContainer_Image {
+    width: 90%;
+}
+
+.itemDetailContainer_Name{
+    font-size: 1.5vw;
+}
+
+.itemDetailContainer_Price{
+    font-size: 1.5vw;
+    color: #328468;
+}
+
+.itemDetailContainer_Image img{
+    width: 90%;
+}
+
+
+.itemDetailContainer_Description {
+    font-size: 1.5vw;
+    width: 80%;
+    margin-top: 1vw;
+}

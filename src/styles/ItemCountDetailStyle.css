@@ -1,0 +1,75 @@
+.detailCountContainer {
+    display: flex;
+    border: solid black 1px;
+    justify-content: center;
+    align-items: center;
+    width: 8vw;
+    height: 2vw;
+    border-radius: 0.5vw;
+    justify-content: space-around;
+
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+.stock {
+    font-size: 1.1vw;
+    color: #328468;
+    margin-top: 3%;
+}
+
+.detailCountContainer__SubtractButton {
+    font-size: 3vw;
+    cursor: pointer;
+    color: #328468;
+    margin-bottom: 5%;
+}
+.detailCountContainer__AddButton {
+    font-size: 2.5vw;
+    cursor: pointer;
+    color: #328468;;
+}
+.detailCountContainer__Amount {
+    font-size: 2vw;
+}
+
+.addToCartDetailButton {
+    font-size: 1vw;
+    text-align: center;
+    color: white;
+    
+    width: 8vw;
+    height: 2vw;
+    border-radius: 0.5vw;
+    border: solid 1px #328468;
+    background-color: #328468;
+    padding-top: 0.3vw;
+} 
+
+.addToCartDetailButton:hover {
+    font-size: 1vw;
+    text-align: center;
+    color: white;
+    
+    width: 8vw;
+    height: 2vw;
+
+    border-radius: 0.5vw;
+    border: solid 1px #43A080;
+    background-color: #43A080;
+} 
+
+.addToCartDetailButton:active {
+    font-size: 1vw;
+    text-align: center;
+    color: #328468;;
+    
+    width: 8vw;
+    height: 2vw;
+
+    border-radius: 0.5vw;
+
+    background-color: white;
+    border: solid 1px #43A080;
+} 
+

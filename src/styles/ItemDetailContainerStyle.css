@@ -1,0 +1,15 @@
+.newReleasesContainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 5%;
+    padding-left: 5%;
+    margin-bottom: 5%;
+}
+
+.loader {
+    margin-left: 35vw;
+    margin-top: 10vw;
+}
+  

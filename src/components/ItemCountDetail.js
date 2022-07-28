@@ -1,10 +1,10 @@
 import React, { useState} from 'react'
 import Swal from 'sweetalert2'
 
-import '../styles/ItemCountStyle.css'
+import '../styles/ItemCountDetailStyle.css'
 
 
-export default function ItemCount({cartList,item}) {
+export default function ItemCountDetail({cartList,item}) {
 
 	const [ amount, setAmount ] = useState(0)
 	const [ stock, setStock ] = useState(item.stock)
@@ -93,22 +93,22 @@ export default function ItemCount({cartList,item}) {
 		<div >
 			{
 				stock === 0 ?
-				<div className="newReleasesContainer_Stock">
+				<div className="stock">
 					Sin stock
 				</div>
 				:
-				<div className="newReleasesContainer_Stock">
+				<div className="stock">
 					Stock disponible: {stock}
 				</div>
 			}
 			
-			<div className='countContainer'>
-				<div onClick={onSubtract} className='subtractButton'>-</div>
-				<div className='amountText'>{amount}</div>
-				<div onClick={onAdd} className='addButton'>+</div>
+			<div className='detailCountContainer'>
+				<div onClick={onSubtract} className='detailCountContainer__SubtractButton'>-</div>
+				<div className='detailCountContainer__Amount'>{amount}</div>
+				<div onClick={onAdd} className='detailCountContainer__AddButton'>+</div>
 			</div>
 		
-			<div className='addToCartButton' onClick={() => addToCart(cartList,stock,amount,item) }>
+			<div className='addToCartDetailButton' onClick={() => addToCart(cartList,stock,amount,item) }>
 				AGREGAR
 			</div>
 		</div>
