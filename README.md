@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+<img src="./src/assets/logo-fondo-blanco-horizontal.png" alt="Mi logo" width='20%'/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1> GARDEN CENTER ~ CURSO REACT CODERHOUSE </h1>
 
-## Available Scripts
+<h2> ¿En qué consiste? </h2>
 
-In the project directory, you can run:
+<p> 
+  🍀 Mi proyecto es un e-commerce de un vivero al cual nombré "Garden Center". Básicamente es una extensión de mi proyecto del primer curso que hice en CoderHouse, Desarrollo Web. Podría haber armado otro repositorio con una idea completamente distinta, pero preferí profundizar en mi trabajo ya empezado, y lograr un código expansible y refactorizado.
+  
+  🍀 No fue mi primera idea, pero quise elegir una temática que me fuera divertida, y que pueda tener un diseño amigable a la vista. Decidí hacer un vivero para que el front fuera simple, con colores suaves y minimalista, acompañado con fotos de plantas y flores.
 
-### `npm start`
+  🍀 Mi paleta de colores:
+</p>
+ <img src="https://user-images.githubusercontent.com/56458193/182176440-e3478376-bd0f-445c-929b-4d2a8d851b36.png" alt="Paleta" width='30%'/>
+ 
+<h2> Librerías usadas </h2>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<p> 
+  🍀 SweetAlert2  --  11.4.24
+  
+  🍀 react-spinners  --  0.13.3
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  🍀 FontAwesome  --  6.1.1
+</p>
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
