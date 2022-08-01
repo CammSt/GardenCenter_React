@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import { Link } from 'react-router-dom'
 
 import '../styles/HomeStyle.css'
 import Title from '../components/Title'
@@ -17,7 +18,7 @@ export default function Home({cartList}) {
             <div className="goToShopContainer">
                 <img src={require('../assets/home_background_cropped.jpg')} className="img-fluid" alt="Home Background"/>
                 <h3 className="goToShopContainer__Title">VISITE NUESTRA TIENDA</h3>
-                <button className="goToShopContainer__Button"> <i className="fa-brands fa-envira"></i> IR A LA TIENDA</button>
+                <Link className="goToShopContainer__Button" to={'/'}> <i className="fa-brands fa-envira"></i> IR A LA TIENDA</Link>
                 
             </div>
         
