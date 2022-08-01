@@ -8,13 +8,15 @@
 .mainMenu {
     list-style: none;
     display: flex;
+    border-bottom:  0.5px solid #8A8A8A;
 }
 
 .navBarItem {
     text-align: center;
     border-right: 0.5px solid #8A8A8A;
     width: 19%;
-    padding-top: 0.5vw;
+    display: flex;
+    justify-content: center;
 }
 .navBarItem_Title {
     padding: 0.5vw;
@@ -23,6 +25,7 @@
     font-size: 1.2vw;
     font-weight: 600;
     color: #328468;
+    align-self: center;
 }
 .navBarItem_Icon {
     margin-right: 0.8vw;

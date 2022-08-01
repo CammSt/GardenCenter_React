@@ -1,0 +1,36 @@
+.filtersContainer{
+    margin-bottom: 3%;
+}
+
+.filters {
+    list-style: none;
+    display: flex;
+}
+
+.filterItem {
+    text-align: center;
+    width: 50%;
+    cursor: pointer;
+}
+
+.filterItem__Title {
+    padding: 0.5vw;
+    display: block;
+    text-decoration: none;
+    font-size: 1.2vw;
+    font-weight: 600;
+    color: #328468;
+}
+
+.filterItem__Title:hover {
+    background-color: #328468;
+    cursor: pointer;
+}
+.filterItem:hover .filterItem__Title {
+    color: white;
+}
+
+.filterItem:active {
+    background-color: #43A080;
+    color: white;
+}

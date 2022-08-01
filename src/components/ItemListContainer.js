@@ -3,36 +3,77 @@ import BounceLoader from "react-spinners/BounceLoader";
 
 import '../styles/ItemListContainerStyle.css'
 import ItemList from './ItemList'
+import NewItemList from './NewItemList'
+
 import { newItems } from '../variables/newItems'
+import { items } from '../variables/items'
 
-export default function ItemListContainer({cartList}) {
+export default function ItemListContainer({cartList,previousScreen,setProducts,products,categoryId, update}) {
 
-    const [ newProducts, setNewProducts] = useState([])
     const [ loading, setLoading ] = useState(true)
 
     const getProducts = new Promise( (resolve, reject) => {
+
         setTimeout( () => {
-            resolve(newItems)
+            if(previousScreen === 'home') {
+                resolve(newItems)
+                
+            } else if(previousScreen === 'shop') {
+                resolve(items)
+            }
+        
+        }, 2000)
+    })
+
+    const getFilteredProducts = new Promise( (resolve, reject) => {
+
+        setTimeout( () => {
+
+            if( categoryId != undefined ) {
+                let auxList = items.filter( element => element.categoryId.toString() === categoryId.toString() )
+    
+                resolve(auxList)
+            }
+            
         }, 2000)
     })
 
     useEffect( () => {
 
-        getProducts
-            .then( response => setNewProducts(response) )
-            .catch( e => console.log("Hubo un error", e) )
-            .finally( () => setLoading(false))
+        setLoading(true)
 
-    }, [])
+        if( categoryId != undefined) { 
+            getFilteredProducts
+                .then( response => setProducts(response) )
+                .catch( e => console.log("Hubo un error", e) )
+                .finally( () => setLoading(false))
+
+        } else {
+            getProducts
+                .then( response => setProducts(response) )
+                .catch( e => console.log("Hubo un error", e) )
+                .finally( () => setLoading(false))
+        }
+
+
+    }, [update])
 
     return (
         <div className="newReleasesContainer">
-            { 
-                loading ? 
-                <BounceLoader color={'teal'} loading={loading} size={150} className='loader'/>
+            {   
+                previousScreen === 'home' ? 
+    
+                    loading ? 
+                    <BounceLoader color={'teal'} loading={loading} size={150} className='loader'/>
+                    :
+                    <NewItemList cartList={cartList} productsList={products}/>
+    
                 : 
-                <ItemList cartList={cartList} productsList={newProducts}/>
 
+                loading ? 
+                    <BounceLoader color={'teal'} loading={loading} size={150} className='loader'/>
+                    :
+                    <ItemList cartList={cartList} productsList={products}/>
             }
         </div>
     )

@@ -29,19 +29,21 @@
     font-size: 1vw;
     text-align: center;
     color: white;
+    display: flex;
+    justify-content: center;
     
     width: 8vw;
     height: 1.5vw;
     border-radius: 0.5vw;
     border: solid 1px #328468;
     background-color: #328468;
-
-    padding-top: 5%;
 } 
 .addToCartButton:hover {
     font-size: 1vw;
     text-align: center;
     color: white;
+    display: flex;
+    justify-content: center;
     
     width: 8vw;
     height: 1.5vw;

@@ -23,7 +23,7 @@ export default function ItemCount({cartList,item}) {
 		}
 	}
 
-	function addToCart (cartList,stock,amount,item) {
+	function addToCart () {
 	
 		let repeatedObject = cartList.find( cartProduct => parseInt(cartProduct.id) === parseInt(item.id))
 	
@@ -108,7 +108,7 @@ export default function ItemCount({cartList,item}) {
 				<div onClick={onAdd} className='addButton'>+</div>
 			</div>
 		
-			<div className='addToCartButton' onClick={() => addToCart(cartList,stock,amount,item) }>
+			<div className='addToCartButton' onClick={() => addToCart() }>
 				AGREGAR
 			</div>
 		</div>
