@@ -1,11 +1,13 @@
 .detailContainer {
+    display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5%;
+
+    justify-content: center;
 }
 
 .loader {
-    margin-left: 35vw;
     margin-top: 10vw;
 }
   

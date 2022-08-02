@@ -107,6 +107,7 @@ export const items = [
         description: 'Las indivisa son arbustos con hojas semejantes a hojas de palmera , perennes (tienen follaje todo el año). Se plantan como ejemplar singular, en grupos de tres y además en macetas como planta de interior. Da un toque exótico al jardín. Crecen rápido y de manera vigorosa.',
         amount:0,
         stock: 10,
+        id: 9
     },
     {
         image: require('../assets/plantas_interior/Aglaonema_S.jpg'),

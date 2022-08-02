@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import BounceLoader from "react-spinners/BounceLoader";
 
 import '../styles/ItemListContainerStyle.css'
@@ -8,9 +9,13 @@ import NewItemList from './NewItemList'
 import { newItems } from '../variables/newItems'
 import { items } from '../variables/items'
 
-export default function ItemListContainer({cartList,previousScreen,setProducts,products,categoryId, update}) {
+export default function ItemListContainer({cartList,previousScreen,setProducts,products, update}) {
 
     const [ loading, setLoading ] = useState(true)
+
+    let params = useParams()
+
+    let categoryId = params.categoryId
 
     const getProducts = new Promise( (resolve, reject) => {
 
@@ -29,7 +34,7 @@ export default function ItemListContainer({cartList,previousScreen,setProducts,p
 
         setTimeout( () => {
 
-            if( categoryId != undefined ) {
+            if( categoryId !== undefined ) {
                 let auxList = items.filter( element => element.categoryId.toString() === categoryId.toString() )
     
                 resolve(auxList)
@@ -42,7 +47,7 @@ export default function ItemListContainer({cartList,previousScreen,setProducts,p
 
         setLoading(true)
 
-        if( categoryId != undefined) { 
+        if( categoryId !== undefined) { 
             getFilteredProducts
                 .then( response => setProducts(response) )
                 .catch( e => console.log("Hubo un error", e) )
