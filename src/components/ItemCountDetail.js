@@ -4,7 +4,7 @@ import Swal from 'sweetalert2'
 import '../styles/ItemCountDetailStyle.css'
 
 
-export default function ItemCountDetail({cartList,item}) {
+export default function ItemCountDetail({cartList,item,setFinalAmount}) {
 
 	const [ amount, setAmount ] = useState(0)
 	const [ stock, setStock ] = useState(item.stock)
@@ -74,6 +74,8 @@ export default function ItemCountDetail({cartList,item}) {
 			cartList[indexOf].amount = amount
 			cartList[indexOf].stock = stock
 		}
+
+		setFinalAmount(amount)
 		
 		Swal.fire({
 			title: 'Agregado a carrito',

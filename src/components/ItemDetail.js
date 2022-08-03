@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState} from 'react'
+import { NavLink } from 'react-router-dom'
 
 import '../styles/ItemDetailStyle.css'
 import ItemCountDetail from './ItemCountDetail'
 
 export default function ItemDetail({cartList,product}) {
 
+    const [ finalAmount, setFinalAmount ] = useState(0)
 
     return (
         <div className="itemDetailContainer" >
@@ -24,7 +26,19 @@ export default function ItemDetail({cartList,product}) {
                     {product.description}
                 </div>
 
-                <ItemCountDetail item={product} cartList={cartList}/>
+                { 
+                    finalAmount === 0 ? 
+                    
+                        <ItemCountDetail item={product} cartList={cartList} setFinalAmount={setFinalAmount}/>
+                    :
+                        <NavLink to={'/cart'} style={{textDecoration:'none'}}>
+                            <button className='finishGoToCartButton'>
+                                TERMINAR COMPRA
+                            </button>
+                        </NavLink>
+                }
+
+
             </div>
         </div>
     )

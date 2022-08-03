@@ -7,7 +7,6 @@ import ItemCount from './ItemCount'
 
 export default function Item({item,cartList}) {
 
-
     return (
         <div className="newReleasesContainer_Item">
 
