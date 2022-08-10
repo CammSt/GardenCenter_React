@@ -1,0 +1,11 @@
+.cartNumber {
+    position: absolute;
+    top: 18vw;
+    left: 94%;
+    font-size: 1.5vw;
+
+    background-color: #328468;
+    padding: .1vw .9vw;
+    border-radius: 2.5vw;
+    color: white;
+}

@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState} from 'react'
+import React, {createContext, useState} from 'react'
 import Swal from 'sweetalert2'
 
 const CartContext = createContext()
@@ -6,9 +6,23 @@ const CartContext = createContext()
 export default function CartProvider({children}) {
     
     const [ cartList, setCartList ] = useState([])
+	const [ amount, setAmount] = useState(0)
 
-    const removeItem = (indexOf,cartListAux) => {
-        cartListAux.splice(indexOf,1)
+
+	const getProductAmount = () => {
+		let auxAmount = 0
+		cartList.forEach( element => {
+            auxAmount = auxAmount + element.amount
+        });
+
+		setAmount(auxAmount)
+	}
+
+    const removeItem = (element) => {
+
+		let index = cartList.indexOf( item => item.id === element.id)
+
+        cartList.splice(index,1)
 				
         Swal.fire({
             title: 'Se borró del carrito',
@@ -21,10 +35,10 @@ export default function CartProvider({children}) {
             background: '#F7A25A',
             color: 'white',
             iconColor: 'white'
-        })
-        setCartList([])
-        setCartList(cartListAux)
-        
+        })    
+
+		setCartList(cartList)
+
         return
     }
 
@@ -85,10 +99,12 @@ export default function CartProvider({children}) {
 		})
 		setCartList([])
 		setCartList(cartListAux)
+
+		getProductAmount()
 	}
     
     return (
-        <CartContext.Provider value={{cartList,addItem,removeItem,clear}}>
+        <CartContext.Provider value={{cartList,addItem,removeItem,clear,amount}}>
             {children}
         </CartContext.Provider>
     )

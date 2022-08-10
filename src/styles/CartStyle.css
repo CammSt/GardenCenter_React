@@ -1,0 +1,58 @@
+.cartContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 5%;
+}
+
+.itemContainer {
+    width: 35%;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    border: solid #328468 .3px;
+    transition: all 0.5s;
+
+}
+
+.itemContainer:hover {
+    transform: scale(1.1);
+  }
+
+.itemContentContainer {
+    display: flex;
+    align-items: center;
+    color: black;
+    
+}
+  
+.itemContainer_Image { 
+    width: 40%;
+    margin-right: 2%;
+}   
+.itemContainer_Image img {
+    width: 100%;
+    border-radius: 5vw;
+}
+  
+.itemContainer_Text {
+    font-size: 1.1vw;
+    text-decoration: none;
+    color: black;
+    margin-bottom: .5vw;
+}
+
+.deleteProductIcon {
+    font-size: 1.5vw;
+    color: #328468 ;
+    cursor: pointer;
+}
+  
