@@ -1,10 +1,13 @@
-import React, { useState} from 'react'
+import React, { useState, useContext } from 'react'
 import Swal from 'sweetalert2'
 
 import '../styles/ItemCountDetailStyle.css'
+import { CartContext } from '../contexts/CartContext'
 
 
-export default function ItemCountDetail({cartList,item,setFinalAmount}) {
+export default function ItemCountDetail({item}) {
+
+	let cartContext = useContext(CartContext)
 
 	const [ amount, setAmount ] = useState(0)
 	const [ stock, setStock ] = useState(item.stock)
@@ -23,73 +26,6 @@ export default function ItemCountDetail({cartList,item,setFinalAmount}) {
 		}
 	}
 
-	function addToCart () {
-	
-		let repeatedObject = cartList.find( cartProduct => parseInt(cartProduct.id) === parseInt(item.id))
-	
-		if( !repeatedObject ) {
-	
-			if(amount === 0) return 
-	
-			let auxObj = {
-				image: item.image,
-				imageAlt: item.imageAlt,
-				name: item.name,
-				price: item.price,
-				amount: amount,
-				stock: stock,
-				id: item.id
-			}
-			cartList.push(auxObj)
-	
-		} else {
-	
-			let indexOf = null
-	
-			cartList.forEach( (element,index) => {
-				if( cartList[index].id === item.id ) {
-					indexOf = index
-					return
-				}
-			});
-	
-			if(amount === 0) {
-				cartList.splice(indexOf,1)
-				
-				Swal.fire({
-					title: 'Se borró del carrito',
-					icon: 'success',
-					showConfirmButton: false,
-					toast: true,
-					position: 'bottom-end',
-					timer: 3000,
-					timerProgressBar: true,
-					background: '#F7A25A',
-					color: 'white',
-					iconColor: 'white'
-				})
-				return
-			}
-	
-			cartList[indexOf].amount = amount
-			cartList[indexOf].stock = stock
-		}
-
-		setFinalAmount(amount)
-		
-		Swal.fire({
-			title: 'Agregado a carrito',
-			icon: 'success',
-			showConfirmButton: false,
-			toast: true,
-			position: 'bottom-end',
-			timer: 3000,
-			timerProgressBar: true,
-			background: '#11b899',
-			color: 'white',
-			iconColor: 'white'
-		})
-	}
 
 	return (
 		<div >
@@ -110,7 +46,7 @@ export default function ItemCountDetail({cartList,item,setFinalAmount}) {
 				<div onClick={onAdd} className='detailCountContainer__AddButton'>+</div>
 			</div>
 		
-			<div className='addToCartDetailButton' onClick={() => addToCart() }>
+			<div className='addToCartDetailButton' onClick={() => cartContext.addItem(item,amount,stock)}>
 				AGREGAR
 			</div>
 		</div>

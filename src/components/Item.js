@@ -19,7 +19,7 @@ export default function Item({item,cartList}) {
                     {item.name}
                 </NavLink>
                 <div className="newReleasesContainer_Price">
-                    {item.price}
+                    $ {item.price}
                 </div>
                 <ItemCount item={item} cartList={cartList}/>
             </div>

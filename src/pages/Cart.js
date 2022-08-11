@@ -1,4 +1,4 @@
-import React,  { useContext, useEffect, useState } from 'react'
+import React,  { useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons'
 

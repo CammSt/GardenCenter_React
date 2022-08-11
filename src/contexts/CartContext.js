@@ -39,11 +39,13 @@ export default function CartProvider({children}) {
 
 		setCartList(cartList)
 
+		getProductAmount()
         return
     }
 
     const clear = () => {
         setCartList([])
+		setAmount(0)
     }
 
     const addItem = (item,amount,stock) => {

@@ -20,7 +20,7 @@ export default function ItemDetail({cartList,product}) {
                     {product.name}
                 </div>
                 <div className="itemDetailContainer_Price">
-                    {product.price}
+                    $ {product.price}
                 </div>
                 <div className="itemDetailContainer_Description">
                     {product.description}
