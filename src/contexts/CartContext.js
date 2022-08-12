@@ -20,7 +20,7 @@ export default function CartProvider({children}) {
 
     const removeItem = (element) => {
 
-		let index = cartList.indexOf( item => item.id === element.id)
+		let index = cartList.indexOf(element)
 
         cartList.splice(index,1)
 				
