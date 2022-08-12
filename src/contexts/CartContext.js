@@ -43,7 +43,7 @@ export default function CartProvider({children}) {
         return
     }
 
-    const clear = () => {
+    const emptyCart = () => {
         setCartList([])
 		setAmount(0)
     }
@@ -106,7 +106,7 @@ export default function CartProvider({children}) {
 	}
     
     return (
-        <CartContext.Provider value={{cartList,addItem,removeItem,clear,amount}}>
+        <CartContext.Provider value={{cartList,addItem,removeItem,emptyCart,amount}}>
             {children}
         </CartContext.Provider>
     )
