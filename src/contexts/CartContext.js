@@ -7,6 +7,7 @@ export default function CartProvider({children}) {
     
     const [ cartList, setCartList ] = useState([])
 	const [ amount, setAmount] = useState(0)
+	const [ totalPrice, setTotalPrice ] = useState(0)
 
 
 	const getProductAmount = () => {
@@ -40,19 +41,21 @@ export default function CartProvider({children}) {
 		setCartList(cartList)
 
 		getProductAmount()
+		finalPrice()
         return
     }
 
     const emptyCart = () => {
         setCartList([])
-		setAmount(0)
+		getProductAmount()
+		finalPrice()
     }
 
     const addItem = (item,amount,stock) => {
 
         let cartListAux = cartList
 	
-		let repeatedObject = cartListAux.find( cartProduct => parseInt(cartProduct.id) === parseInt(item.id))
+		let repeatedObject = cartListAux.find( cartProduct => cartProduct.id === item.id )
 	
 		if( !repeatedObject ) {
 			
@@ -63,6 +66,7 @@ export default function CartProvider({children}) {
 				imageAlt: item.imageAlt,
 				name: item.name,
 				price: item.price,
+				categoryId: item.categoryId,
 				amount: amount,
 				stock: stock,
 				id: item.id
@@ -78,11 +82,13 @@ export default function CartProvider({children}) {
 					return
 				}
 			})
+
 	
 			if(amount === 0) {
                 removeItem(indexOf,cartListAux)
                 return
 			}
+
 			cartListAux[indexOf].amount = amount
 			cartListAux[indexOf].stock = stock
 		}
@@ -103,10 +109,21 @@ export default function CartProvider({children}) {
 		setCartList(cartListAux)
 
 		getProductAmount()
+		finalPrice()
+	}
+
+
+	const finalPrice = () => {
+		let auxPrice = 0
+		cartList.forEach( element => {
+            auxPrice = auxPrice + (element.price * element.amount)
+        });
+
+		setTotalPrice(auxPrice)
 	}
     
     return (
-        <CartContext.Provider value={{cartList,addItem,removeItem,emptyCart,amount}}>
+        <CartContext.Provider value={{cartList,addItem,removeItem,emptyCart,amount,totalPrice}}>
             {children}
         </CartContext.Provider>
     )

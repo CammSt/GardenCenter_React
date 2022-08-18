@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import BounceLoader from "react-spinners/BounceLoader";
 import { useParams } from 'react-router-dom';
+import { collection, getDocs } from 'firebase/firestore'
 
 import '../styles/ItemDetailContainerStyle.css'
 import ItemDetail from './ItemDetail'
 import Header from './Header'
 
-import { items } from '../variables/items'
+import db from '../firebaseConfig.js'
 
 export default function ItemDetailContainer({cartList}) {
 
@@ -14,22 +15,29 @@ export default function ItemDetailContainer({cartList}) {
     const [ loading, setLoading ] = useState(true)
 
     let params = useParams()
+    
+    const getOneProduct = async () => {
+        setLoading(true)
+        const newProductsCollection = collection(db,'newProducts')
+            const newProductsSnapshot = await getDocs(newProductsCollection)
 
-    const getOneProduct = new Promise( (resolve, reject) => {
-        setTimeout( () => {
+            const productsList = newProductsSnapshot.docs.map( item => {
+                
+                let product = item.data()
+                product.id = item.id
 
-            let auxProduct = items.filter( element => parseInt(element.id) === parseInt(params.id))
-            resolve(auxProduct[0])
+                return product
+            })
 
-        }, 2000)
-    })
+            let auxProduct = productsList.filter( element => element.id === params.id )
+            
+            setSelectedProduct(auxProduct[0])
+            setLoading(false)
+    }
 
     useEffect( () => {
         
-        getOneProduct
-            .then( response => setSelectedProduct(response) )
-            .catch( e => console.log("Hubo un error", e) )
-            .finally( () => setLoading(false))
+        getOneProduct()
 
     }, [])
 

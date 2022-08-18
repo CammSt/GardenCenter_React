@@ -13,6 +13,8 @@ export default function Cart() {
     let cartContext = useContext(CartContext)
     let cartList = cartContext.cartList
 
+    let totalPrice = cartContext.totalPrice
+
     return (
         <div>
             <Header screenTitle={'TU COMPRA'}/>
@@ -28,7 +30,15 @@ export default function Cart() {
     
                                         <div className='itemContentContainer'>
                                             <div className="itemContainer_Image">
-                                                <img src={element.image}  alt={element.imageAlt} />
+                                                { 
+                                                    element.categoryId == 1 ?
+                                                    
+                                                    <img src={require('../assets/plantas_exterior/' + element.image)}  alt={element.imageAlt} />
+
+                                                    :
+
+                                                    <img src={require('../assets/plantas_interior/' + element.image)}  alt={element.imageAlt} />
+                                                }
                                             </div>
     
                                             <div>
@@ -51,6 +61,9 @@ export default function Cart() {
                             })
                         }
                     </div>
+
+                    <div className='finalPriceText'>PRECIO TOTAL  ---> $ {totalPrice}</div>
+
                     <div className='emptyCartText' onClick={() => cartContext.emptyCart()}> VACIAR COMPRA </div>
                 </div>
 

@@ -12,7 +12,15 @@ export default function ItemDetail({cartList,product}) {
         <div className="itemDetailContainer" >
 
             <div className="itemDetailContainer_Image">
-                <img src={product.image}  alt={product.imageAlt} />
+                { 
+                    product.categoryId == 1 ?
+                    
+                    <img src={require('../assets/plantas_exterior/' + product.image)}  alt={product.imageAlt} />
+
+                    :
+
+                    <img src={require('../assets/plantas_interior/' + product.image)}  alt={product.imageAlt} />
+                }
             </div>
 
             <div>

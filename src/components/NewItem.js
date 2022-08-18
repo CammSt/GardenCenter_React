@@ -11,7 +11,16 @@ export default function NewItem({item,cartList}) {
         <div className="newReleasesContainer_Item" >
 
             <NavLink className="newReleasesContainer_Item_Image" to={`/item/${item.id}`} item={item}>
-                <img src={item.image}  alt={item.imageAlt} />
+                { 
+                    item.categoryId == 1 ?
+                    
+                    <img src={require('../assets/plantas_exterior/' + item.image)}  alt={item.imageAlt} />
+
+                    :
+
+                    <img src={require('../assets/plantas_interior/' + item.image)}  alt={item.imageAlt} />
+                }
+                
                 <div className="newReleasesContainer_NewText">
                     NUEVO
                 </div> 
