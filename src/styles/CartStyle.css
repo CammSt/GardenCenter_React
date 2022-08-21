@@ -89,5 +89,106 @@
     margin-left: 3%;
     margin-bottom: 3%;
     color: #328468;
-
 }
+
+
+.goToPayInfoContainer {
+    border: solid #328468 .5px;
+    padding: 2%;
+    width: 30%;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+.goToPayInfoContainer_Text {
+    margin-bottom: 3%;
+    font-weight: bold;
+}
+.goToPayInfoContainer hr {
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
+
+.goToPayInfoContainer_Amount{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+.goToPayInfoContainer_Amount_Text {
+    font-size: 1vw;
+}
+
+
+.goToPayInfoContainer_Delivery{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+.goToPayInfoContainer_Delivery_Text {
+    font-size: 1vw;
+}
+
+
+.goToPayInfoContainer_Price {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+.goToPayInfoContainer_Price_Text {
+    font-size: 1vw;
+    font-weight: bold;
+}
+
+.goToPayButton {
+    text-align: center;
+    margin-top: 7%;
+    width: 30%;
+    margin-left: 70%;
+    border: solid #328468 .5px;
+    border-radius: .3vw;
+    cursor: pointer;
+
+    box-shadow: 0 0.2vw #999;
+    background-color: #328468;
+    color: white;
+
+    font-style: italic;
+    font-size: 1.1vw;
+}
+
+.goToPayButton:active {
+    background-color: white;
+    color: #328468;
+    outline: none;
+    box-shadow: 0 3px #666;
+    transform: translateY(1px);
+}
+
+
+.formDataInput {
+    display: flex;
+    margin-top: 2%;
+    width: 60%;
+    border-radius: 1vw;
+    border: solid grey .5px;
+    padding: 1%;
+}
+
+.submitButton {
+    background-color: #328468;
+    border: solid #328468;
+    color: white;
+    width: 20%;
+    margin-top: 3%;
+    border-radius: 1vw;
+    padding: .5%;
+    cursor: pointer;
+}
+
+.orderIdText{
+    margin-left: 5%;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.6vw;
+}
+
