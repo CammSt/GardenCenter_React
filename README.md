@@ -23,6 +23,6 @@
   🍀 FontAwesome  --  6.1.1
 </p>
 
-<img src='./src/assets/working_example.gif' alt="Paleta" width='30%'/>
+<img src='./src/assets/working_example.gif' alt="Paleta" width='60%'/>
 
 
