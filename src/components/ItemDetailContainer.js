@@ -11,20 +11,20 @@ import db from '../firebaseConfig.js'
 
 export default function ItemDetailContainer() {
 
-    console.log("entro a ItemDetailContainer");
-
     const [ selectedProduct, setSelectedProduct] = useState([])
     const [ loading, setLoading ] = useState(true)
 
     let params = useParams()
     
     const getOneProduct = async () => {
-        setLoading(true)
-        const newProductsCollection = collection(db,'newProducts')
-            const newProductsSnapshot = await getDocs(newProductsCollection)
 
-            const productsList = newProductsSnapshot.docs.map( item => {
-                
+        setLoading(true)
+
+        const productsCollection = collection(db,'productos')
+            const productsSnapshot = await getDocs(productsCollection)
+
+            const productsList = productsSnapshot.docs.map( item => {
+
                 let product = item.data()
                 product.id = item.id
 
@@ -32,15 +32,13 @@ export default function ItemDetailContainer() {
             })
 
             let auxProduct = productsList.filter( element => element.id === params.id )
-            
+
             setSelectedProduct(auxProduct[0])
             setLoading(false)
     }
 
     useEffect( () => {
-        
         getOneProduct()
-
     }, [])
 
     return (

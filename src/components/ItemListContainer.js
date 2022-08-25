@@ -19,34 +19,30 @@ export default function ItemListContainer({previousScreen,setProducts,products, 
 
     const getProducts = async () => {
 
-        if(previousScreen === 'home') {
-            const newProductsCollection = collection(db,'newProducts')
-            const newProductsSnapshot = await getDocs(newProductsCollection)
-
-            const productsList = newProductsSnapshot.docs.map( item => {
-                
-                let product = item.data()
-                product.id = item.id
-
-                return product
-            })
+        const productsCollection = collection(db,'productos')
+        const productsSnapshot = await getDocs(productsCollection)
+        
+        const productsList = productsSnapshot.docs.map( item => {
             
-            setProducts(productsList)
-            
-        } else if(previousScreen === 'shop') {
-            const productsCollection = collection(db,'productos')
-            const productsSnapshot = await getDocs(productsCollection)
-            
-            const productsList = productsSnapshot.docs.map( item => {
-                
-                let product = item.data()
-                product.id = item.id
+            let product = item.data()
+            product.id = item.id
 
-                return product
-            })
+            return product
+        })
+
+        if( previousScreen === 'home') {
+            let firstProduct = productsList.shift()
+            let secondProduct = productsList.shift()
+            let thirdProduct = productsList.shift()
+            let forthProduct = productsList.shift()
+
+            let auxArray = [ firstProduct, secondProduct, thirdProduct, forthProduct]
+            setProducts(auxArray)
+
+
+        } else {
             setProducts(productsList)
         }
-
         setLoading(false)
     }
 
