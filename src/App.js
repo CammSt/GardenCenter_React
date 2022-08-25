@@ -14,9 +14,6 @@ import CartProvider from './contexts/CartContext';
 import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
-
-	let cartList = []
-
 	return (
 		<CartProvider>
 			<BrowserRouter>

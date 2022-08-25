@@ -6,10 +6,8 @@ import ItemCount from './ItemCount'
 
 export default function NewItem({item}) {
 
-
     return (
         <div className="newReleasesContainer_Item" >
-
             <NavLink className="newReleasesContainer_Item_Image" to={`/item/${item.id}`} item={item}>
                 { 
                     item.categoryId == 1 ?
