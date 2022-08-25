@@ -9,7 +9,9 @@ import Header from './Header'
 
 import db from '../firebaseConfig.js'
 
-export default function ItemDetailContainer({cartList}) {
+export default function ItemDetailContainer() {
+
+    console.log("entro a ItemDetailContainer");
 
     const [ selectedProduct, setSelectedProduct] = useState([])
     const [ loading, setLoading ] = useState(true)
@@ -50,7 +52,7 @@ export default function ItemDetailContainer({cartList}) {
 
                 <div>
                     <Header screenTitle={selectedProduct.name} />
-                    <ItemDetail cartList={cartList} product={selectedProduct}/>
+                    <ItemDetail product={selectedProduct}/>
                 </div>
 
 

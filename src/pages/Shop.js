@@ -5,19 +5,17 @@ import ItemListContainer from '../components/ItemListContainer'
 import Filters from '../components/Filters'
 
 
-export default function Shop({cartList}) {
+export default function Shop() {
 
     const [ products, setProducts ] = useState([])
     const [ update, setUpdate ] = useState(false)
-
-    
 
     return (
         <div>
             <Header screenTitle={'TIENDA'}/>
             <Filters setUpdate={setUpdate} update={update}/>
             
-            <ItemListContainer cartList={cartList} previousScreen={'shop'} setProducts={setProducts} products={products} update={update}/>
+            <ItemListContainer previousScreen={'shop'} setProducts={setProducts} products={products} update={update}/>
 
         </div>
     )

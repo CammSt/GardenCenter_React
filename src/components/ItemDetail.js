@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import '../styles/ItemDetailStyle.css'
 import ItemCountDetail from './ItemCountDetail'
 
-export default function ItemDetail({cartList,product}) {
+export default function ItemDetail({product}) {
 
     const [ finalAmount, setFinalAmount ] = useState(0)
 
@@ -37,7 +37,7 @@ export default function ItemDetail({cartList,product}) {
                 { 
                     finalAmount === 0 ? 
                     
-                        <ItemCountDetail item={product} cartList={cartList} setFinalAmount={setFinalAmount}/>
+                        <ItemCountDetail item={product} setFinalAmount={setFinalAmount}/>
                     :
                         <NavLink to={'/cart'} style={{textDecoration:'none'}}>
                             <button className='finishGoToCartButton'>

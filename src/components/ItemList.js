@@ -3,13 +3,13 @@ import '../styles/ItemListContainerStyle.css'
 
 import Item from './Item'
 
-export default function ItemList({cartList,productsList}) {
+export default function ItemList({productsList}) {
 
     return (
         <div className="newReleasesContainer">
             { productsList.map( (item,index) => {
                 return (
-                    <Item key={index} item={item} cartList={cartList}/>
+                    <Item key={index} item={item}/>
                 )
             })}
         </div>

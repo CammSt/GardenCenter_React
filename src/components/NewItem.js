@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import '../styles/ItemStyle.css'
 import ItemCount from './ItemCount'
 
-export default function NewItem({item,cartList}) {
+export default function NewItem({item}) {
 
 
     return (
@@ -33,7 +33,7 @@ export default function NewItem({item,cartList}) {
                 <div className="newReleasesContainer_Price">
                     $ {item.price}
                 </div>
-                <ItemCount item={item} cartList={cartList}/>
+                <ItemCount item={item}/>
             </div>
             
         </div>

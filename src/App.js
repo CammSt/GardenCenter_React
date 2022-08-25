@@ -22,14 +22,14 @@ function App() {
 			<BrowserRouter>
 				<NavBar/>
 				<Routes>
-					<Route  path='/' element={<Shop cartList={cartList}/>}/>
-					<Route  path='/home' element={<Home cartList={cartList}/>}/>
+					<Route  path='/' element={<Shop/>}/>
+					<Route  path='/home' element={<Home/>}/>
 					<Route  path='/aboutUs' element={<AboutUs/>}/>
 					<Route  path='/contact' element={<ContactUs/>}/>
-					<Route  path='/cart' element={<Cart cartList={cartList}/>}/>
+					<Route  path='/cart' element={<Cart/>}/>
 
-					<Route  path='/category/:categoryId' element={<Shop cartList={cartList}/>} />
-					<Route  path='/item/:id' element={<ItemDetailContainer cartList={cartList}/> }/>
+					<Route  path='/category/:categoryId' element={<Shop/>} />
+					<Route  path='/item/:id' element={<ItemDetailContainer/> }/>
 
 				</Routes>
 			</BrowserRouter>

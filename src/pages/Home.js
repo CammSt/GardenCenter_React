@@ -8,7 +8,7 @@ import PaymentMethod from '../components/PaymentMethod'
 import { paymentMethods } from '../variables/paymentMethods'
 import ItemListContainer from '../components/ItemListContainer'
 
-export default function Home({cartList}) {
+export default function Home() {
 
     const [ products, setProducts] = useState([])
 
@@ -38,7 +38,7 @@ export default function Home({cartList}) {
         
             <Title title={'NUEVOS INGRESOS'}/>
 
-            <ItemListContainer cartList={cartList} previousScreen={'home'} products={products} setProducts={setProducts}/>
+            <ItemListContainer previousScreen={'home'} products={products} setProducts={setProducts}/>
 
         </div>
     )

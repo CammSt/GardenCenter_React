@@ -9,7 +9,7 @@ import NewItemList from './NewItemList'
 
 import db from '../firebaseConfig.js'
 
-export default function ItemListContainer({cartList,previousScreen,setProducts,products, update}) {
+export default function ItemListContainer({previousScreen,setProducts,products, update}) {
 
     const [ loading, setLoading ] = useState(true)
 
@@ -91,14 +91,14 @@ export default function ItemListContainer({cartList,previousScreen,setProducts,p
                     loading ? 
                     <BounceLoader color={'teal'} loading={loading} size={150} className='loader'/>
                     :
-                    <NewItemList cartList={cartList} productsList={products}/>
+                    <NewItemList productsList={products}/>
     
                 : 
 
                 loading ? 
                     <BounceLoader color={'teal'} loading={loading} size={150} className='loader'/>
                     :
-                    <ItemList cartList={cartList} productsList={products}/>
+                    <ItemList productsList={products}/>
             }
         </div>
     )
