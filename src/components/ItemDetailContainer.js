@@ -16,6 +16,7 @@ export default function ItemDetailContainer() {
 
     let params = useParams()
     
+    //recupera el listado de la bd y busca el elemento que corresonde al id del path
     const getOneProduct = async () => {
 
         setLoading(true)

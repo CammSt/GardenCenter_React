@@ -17,6 +17,7 @@ export default function ItemListContainer({previousScreen,setProducts,products, 
 
     let categoryId = params.categoryId
 
+    //recupera el listado de la bd y devuelve el listado correspondiente a la screen ( home o shop )
     const getProducts = async () => {
 
         const productsCollection = collection(db,'productos')
@@ -46,6 +47,8 @@ export default function ItemListContainer({previousScreen,setProducts,products, 
         setLoading(false)
     }
 
+
+    //recupera el listado de la bd y filtra segun el id de la categoria del path
     const getFilteredProducts = async () => {
         const productsCollection = collection(db,'productos')
         const productsSnapshot = await getDocs(productsCollection)
@@ -70,6 +73,7 @@ export default function ItemListContainer({previousScreen,setProducts,products, 
 
         setLoading(true)
 
+        //si no es undefined es porque se selecciono una categoria
         if( categoryId !== undefined) { 
             getFilteredProducts()
         } else {

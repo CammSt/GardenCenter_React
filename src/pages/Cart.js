@@ -50,6 +50,8 @@ export default function Cart() {
         pushData({...order, buyer: formData})
     }
 
+
+    //actualiza el listado de ordenes de la bd agregando una orden mas
     const pushData = async (newOrder) => {
         const collectionOrder = collection(db, 'orders')
         const orderDoc = await addDoc(collectionOrder, newOrder)

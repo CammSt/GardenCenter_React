@@ -11,43 +11,6 @@ export default function ContactUs() {
             <Header screenTitle={'CONTACTANOS'}/>
 
             <div>
-                {/* <div className="titleContainer">
-                    <h3 className="titleContainer__Text"> ¿TENÉS ALGUNA PREGUNTA? ESCRIBINOS</h3>
-                </div> */}
-                
-                {/* <form className="messageForm">
-
-                    <div className='formFirstRow'>
-                        <div>
-                            <label>
-                                Nombre
-                            </label> 
-                            <input type="text" name="name" className="inputStyle" id="inputName"/>
-                        </div>
-
-                        <div>
-                            <label>
-                                Email
-                            </label> 
-                            <input type="text" name="email" className="form-control" id="inputEmail"/>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label> Teléfono </label> 
-                        <input type="text" name="phone" className="form-control" id="inputPhone"/>
-                    </div>
-                    
-                    <label> Dejanos acá tu mensaje...</label>
-                
-                    <div>
-                        <textarea className="form-control" name="message" value="" id="inputMessage" rows="5"></textarea>
-                    </div>
-            
-                    <button type="submit" className="btn">ENVIAR CONSULTA</button>
-
-                </form> */}
-
                 <div className="titleContainer">
                     <h3 className="titleContainer__Text"> ¿TENÉS ALGUNA PREGUNTA? PODES PREGUNTARNOS POR NUESTRAS REDES SOCIALES</h3>
                 </div>

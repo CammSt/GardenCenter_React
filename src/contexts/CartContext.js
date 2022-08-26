@@ -10,6 +10,7 @@ export default function CartProvider({children}) {
 	const [ totalPrice, setTotalPrice ] = useState(0)
 
 
+	// devuelva la cantidad de elementos en el carrito
 	const getProductAmount = () => {
 		let auxAmount = 0
 		cartList.forEach( element => {
@@ -19,6 +20,7 @@ export default function CartProvider({children}) {
 		setAmount(auxAmount)
 	}
 
+	// elimina un elemento del carrito
     const removeItem = (element) => {
 
 		let index = cartList.indexOf(element)
@@ -45,12 +47,15 @@ export default function CartProvider({children}) {
         return
     }
 
+	// borra todo el contenido del carrito
     const emptyCart = () => {
         setCartList([])
 		getProductAmount()
 		finalPrice()
     }
 
+
+	// agrega un producto, si esta repetido modifica la cantidad por la ultima ingresada, si la cantidad es cero lo borra y sino lo agrega normalmente
     const addItem = (item,amount,stock) => {
 
         let cartListAux = cartList
@@ -112,7 +117,7 @@ export default function CartProvider({children}) {
 		finalPrice()
 	}
 
-
+	// devuele el valor total de la compra
 	const finalPrice = () => {
 		let auxPrice = 0
 		cartList.forEach( element => {
